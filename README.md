@@ -1,0 +1,1 @@
+This is a repository for studying a lecture 'MCP Masterclass: Complete Guide to MCP in Python 2025' by Henry Habib and The Intellegent Worker. The videos are in [udemy](https://www.udemy.com/). If you want to see original videos, [Click here](https://www.udemy.com/course/learn-mcp-model-context-protocol-complete-guide/).
