@@ -42,3 +42,9 @@ Better upgrade the versions of the libraries. Example below.
 ```bash
 uv add pillow pyscreeze pyautogui --upgrade
 ```
+
+### If you use git bash, add `source` command to activate venv environment
+
+```bash
+source ./.venv/Scripts/activate
+```
