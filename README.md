@@ -34,3 +34,11 @@ When you run more than two MCP server using uv, uv shares the cache folder and t
         "UV_CACHE_DIR": "C:\\pathB\\.uv_cache"
       }
 ```
+
+### When you use latest Python, sometimes there would be some errors
+
+Better upgrade the versions of the libraries. Example below.
+
+```bash
+uv add pillow pyscreeze pyautogui --upgrade
+```
