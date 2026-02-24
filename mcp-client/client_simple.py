@@ -33,9 +33,17 @@ async def run():
                 resources = await session.list_resources()
                 print("Available resources:", resources)
 
-                print("Listing resources templates...")
+                print("Listing resource templates...")
                 resources = await session.list_resource_templates()
                 print("Available resource templates:", resources)
+
+                print("Getting resource")
+                resource = await session.read_resource("weather://statement")
+                print(resource)
+
+                print("Getting resource template")
+                resource = await session.read_resource("weather://Vancouver/statement")
+                print(resource)
 
     except Exception as e:
         print("An error occurred:")
