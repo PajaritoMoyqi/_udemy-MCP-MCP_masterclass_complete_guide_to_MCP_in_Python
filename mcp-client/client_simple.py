@@ -45,6 +45,15 @@ async def run():
                 resource = await session.read_resource("weather://Vancouver/statement")
                 print(resource)
 
+                # PROMPTS
+                print("Listing prompts...")
+                prompts = await session.list_prompts()
+                print("Available prompts templates:", prompts)
+
+                print("Prompt tool...")
+                result = await session.get_prompt("get_prompt", arguments={"topic": "Water Cycle"})
+                print("Prompt result:", result)
+
     except Exception as e:
         print("An error occurred:")
         traceback.print_exc()
