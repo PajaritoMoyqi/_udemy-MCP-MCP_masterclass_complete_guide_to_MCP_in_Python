@@ -4,8 +4,9 @@ import asyncio
 import traceback
 
 server_params = StdioServerParameters(
-    command="npx",
-    args=["-y", "@openbnb/mcp-server-airbnb", "--ignore-robots-txt"],  # Optional command line arguments
+    command="uv",
+    args=["run", "server.py"],  # Optional command line arguments
+    # args=["--directory", "C:\\MCP\\code\\mcp-client", "run", "server.py"],  # Optional command line arguments
 )
 
 async def run():
@@ -24,8 +25,17 @@ async def run():
                 print("Available tools:", tools)
 
                 print("Calling tool...")
-                result = await session.call_tool("airbnb_search", arguments={"location": "California"})
+                result = await session.call_tool("get_weather", arguments={"location": "San Francisco"})
                 print("Tool result:", result)
+
+                # RESOURCES
+                print("Listing resources...")
+                resources = await session.list_resources()
+                print("Available resources:", resources)
+
+                print("Listing resources templates...")
+                resources = await session.list_resource_templates()
+                print("Available resource templates:", resources)
 
     except Exception as e:
         print("An error occurred:")
