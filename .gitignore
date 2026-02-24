@@ -5,5 +5,8 @@ __pycache__
 # venv
 .venv/
 
+# environment variables
+.env
+
 # private files
 __*.md
