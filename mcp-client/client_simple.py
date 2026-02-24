@@ -23,6 +23,10 @@ async def run():
                 tools = await session.list_tools()
                 print("Available tools:", tools)
 
+                print("Calling tool...")
+                result = await session.call_tool("airbnb_search", arguments={"location": "California"})
+                print("Tool result:", result)
+
     except Exception as e:
         print("An error occurred:")
         traceback.print_exc()
