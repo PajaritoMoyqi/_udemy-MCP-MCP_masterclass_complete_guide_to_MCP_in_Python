@@ -8,5 +8,12 @@ __pycache__
 # environment variables
 .env
 
+# Python-generated files
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
 # private files
 __*.md
