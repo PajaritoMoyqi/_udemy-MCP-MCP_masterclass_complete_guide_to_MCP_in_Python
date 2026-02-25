@@ -36,5 +36,23 @@ def save_memory(memory: str):
         )
     return {"status": "saved", "vector_store_id": vector_store.id}
 
+@mcp.tool()
+def search_memory(query: str):
+    """Search memories in the vector store and return relevant chunks."""
+    vector_store = get_or_create_vector_store()
+    results = client.vector_stores.search(
+        vector_store_id=vector_store.id,
+        query=query,
+    )
+
+    content_texts = [
+        content.text
+        for item in results.data
+        for content in item.content
+        if content.type == "text"
+    ]
+
+    return {"results": content_texts}
+
 if __name__ == "__main__":
     mcp.run(transport="stdio")
